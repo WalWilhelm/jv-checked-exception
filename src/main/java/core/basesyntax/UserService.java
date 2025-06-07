@@ -1,23 +1,17 @@
 package core.basesyntax;
 
 public class UserService {
-    private final UserRepository userRepository = new UserRepository();
-
-    public void registerUser(String login, String password, String repeatPassword)
+    public String registerUser(String login, String password, String repeatPassword)
             throws PasswordValidationException {
 
-        // Проверяем пароли (в том числе на null)
-        PasswordValidator.validate(password, repeatPassword);
+        if (!PasswordValidator.validate(password, repeatPassword)) {
+            return "Validation failed.";
+        }
 
-        // Создаем пользователя и задаем поля
-        User user = new User();
-        user.setLogin(login);
-        user.setPassword(password);
-        user.setRepeatPassword(repeatPassword);
-
-        // Сохраняем пользователя в базу
-        userRepository.save(user);
+        User user = new User(login, password, repeatPassword);
+        return "User " + user.getUsername() + " was saved to database!!!";
     }
 }
+
 
 

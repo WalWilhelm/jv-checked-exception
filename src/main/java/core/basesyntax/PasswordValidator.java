@@ -1,15 +1,16 @@
 package core.basesyntax;
 
 public class PasswordValidator {
-    public static void validate(String password, String repeatPassword)
+    public static boolean validate(String password, String repeatPassword)
             throws PasswordValidationException {
         if (password == null || repeatPassword == null) {
-            throw new PasswordValidationException("Password or repeated password can't be null");
+            return false;
         }
-        if (!password.equals(repeatPassword)
-                || password.length() < 10) {
+        if (!password.equals(repeatPassword) || password.length() < 10) {
             throw new PasswordValidationException("Wrong passwords");
         }
+        return true;
     }
 }
+
 
