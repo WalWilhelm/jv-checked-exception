@@ -1,9 +1,9 @@
 package core.basesyntax;
 
 public class User {
-    private String username;
-    private String password;
-    private String repeatPassword;
+    private final String username;
+    private final String password;
+    private final String repeatPassword;
 
     public User(String username, String password, String repeatPassword) {
         this.username = username;
@@ -23,3 +23,4 @@ public class User {
         return repeatPassword;
     }
 }
+
