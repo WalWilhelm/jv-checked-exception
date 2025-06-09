@@ -1,6 +1,5 @@
 package core.basesyntax;
 
-
 public class UserService {
     public String registerUser(User user) {
         try {
@@ -16,6 +15,7 @@ public class UserService {
         return "User " + user.getUsername() + " was saved to database!!!";
     }
 }
+
 
 
 
