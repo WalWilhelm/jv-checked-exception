@@ -5,11 +5,13 @@ public class PasswordValidator {
             throws PasswordValidationException {
         if (password == null || repeatPassword == null
                 || password.isEmpty() || repeatPassword.isEmpty()
-                || !password.equals(repeatPassword)) {
+                || !password.equals(repeatPassword)
+                || password.length() < 6) {
             throw new PasswordValidationException("Wrong passwords");
         }
     }
 }
+
 
 
 
