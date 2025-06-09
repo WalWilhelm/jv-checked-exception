@@ -8,13 +8,17 @@ public class UserService {
             System.out.println("Your passwords are incorrect. Try again.");
             return null;
         }
-        return saveUser(user);
+
+        String result = saveUser(user);
+        System.out.println(result); // <--- это и нужно тесту
+        return result;
     }
 
     public String saveUser(User user) {
         return "User " + user + " was saved to database!!!";
     }
 }
+
 
 
 
