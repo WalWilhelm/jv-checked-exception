@@ -1,5 +1,6 @@
 package core.basesyntax;
 
+
 public class UserService {
     public String registerUser(User user) {
         try {
