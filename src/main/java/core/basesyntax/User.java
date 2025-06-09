@@ -22,5 +22,11 @@ public class User {
     public String getRepeatPassword() {
         return repeatPassword;
     }
+
+    @Override
+    public String toString() {
+        return "User " + username;
+    }
 }
+
 
