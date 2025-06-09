@@ -22,7 +22,5 @@ public class User {
     public String getRepeatPassword() {
         return repeatPassword;
     }
-
-
 }
 
