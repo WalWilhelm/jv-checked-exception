@@ -1,20 +1,20 @@
 package core.basesyntax;
 
-public class UserService {
-    public String registerUser(User user) {
-        try {
-            PasswordValidator.validate(user.getPassword(), user.getRepeatPassword());
-        } catch (PasswordValidationException e) {
-            System.out.println("Your passwords are incorrect. Try again.");
-            return null;
+public class PasswordValidator {
+    public static void validate(String password, String repeatPassword) throws PasswordValidationException {
+        if (password == null || repeatPassword == null) {
+            throw new PasswordValidationException("Password or repeated password cannot be null");
         }
-        return saveUser(user);
-    }
-
-    public String saveUser(User user) {
-        return "User " + user.getUsername() + " was saved to database!!!";
+        if (!password.equals(repeatPassword)) {
+            throw new PasswordValidationException("Passwords do not match");
+        }
+        if (password.length() < 8) {
+            throw new PasswordValidationException("Password must be at least 8 characters long");
+        }
+        // Здесь можно добавить дополнительные проверки, например наличие цифр, спецсимволов и т.д.
     }
 }
+
 
 
 
