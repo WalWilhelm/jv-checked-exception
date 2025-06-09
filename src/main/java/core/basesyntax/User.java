@@ -22,4 +22,12 @@ public class User {
     public String getRepeatPassword() {
         return repeatPassword;
     }
+
+    @Override
+    public String toString() {
+        // Это будет по умолчанию выглядеть как core.basesyntax.User@hashcode,
+        // чтобы тесты проходили, можно оставить как есть
+        return super.toString();
+    }
 }
+

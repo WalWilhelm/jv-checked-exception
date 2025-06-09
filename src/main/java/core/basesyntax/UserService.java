@@ -12,9 +12,11 @@ public class UserService {
     }
 
     public String saveUser(User user) {
-        return "User " + user.getUsername() + " was saved to database!!!";
+        return "User " + user + " was saved to database!!!";
     }
 }
+
+
 
 
 
