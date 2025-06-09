@@ -12,8 +12,8 @@ public class UserService {
     }
 
     private void saveUser(User user) {
-        // Здесь имитация сохранения пользователя
-        System.out.println("Saving user " + user.getUsername());
+        // Здесь можно имитировать сохранение в базу
+        System.out.println("Saving user " + user.getUsername() + " to database...");
     }
 }
 
