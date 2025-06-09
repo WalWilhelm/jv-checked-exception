@@ -6,6 +6,10 @@ public class Main {
         User user = new User("email@email", "1234567890", "1234567890");
 
         String result = userService.registerUser(user);
-        System.out.println(result);
+        if (result == null) {
+            System.out.println("Registration failed.");
+        } else {
+            System.out.println(result);
+        }
     }
 }
